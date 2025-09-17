@@ -18,10 +18,12 @@
 |   |-- <sketch-name>/
 |   |   |-- README.en.md
 |   |   |-- README.ja.md
+|   |   |-- sketch.yaml
 |   |   |-- <sketch-name>.ino
 |   |   `-- <sketch-name>-<platform>/
 |   |       |-- README.en.md
 |   |       |-- README.ja.md
+|   |       |-- sketch.yaml
 |   |       `-- <sketch-name>-<platform>.ino
 |   `-- ...
 `-- tools/
@@ -79,10 +81,23 @@ arduino-cli upload --fqbn <fqbn> --port <port> <category>/<sketch-name>/<sketch-
 - [ ] 既存サンプルのビルドに影響が無いことを確認した
 
 ## よく使うボードの FQBN メモ
-| Board | FQBN |
-| ----- | ----- |
-| Arduino Uno R3 | arduino:avr:uno |
-| ESP32 Dev Module | esp32:esp32:esp32 |
-| M5Atom | m5stack:esp32:m5stack_atom |
+| Board | FQBN | Platform URL|
+| ----- | ----- | ----- |
+| Arduino Uno R3 | arduino:avr:uno ||
+| ESP32 Dev Module | esp32:esp32:esp32 |https://espressif.github.io/arduino-esp32/package_esp32_index.json|
+| M5Atom | m5stack:esp32:m5stack_atom |https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/arduino/package_m5stack_index.json|
 
 必要に応じて追加ボードがあればこの表を更新してください。
+
+## sketch.yamlのフォーマット
+```
+profiles:
+  m5stack_atom:
+    fqbn: m5stack:esp32:m5stack_atom
+    platforms:
+      - platform: m5stack:esp32 (3.2.2)
+        platform_index_url: https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/arduino/package_m5stack_index.json
+default_profile: m5stack_atom
+```
+
+上記のようなフォーマットでプロファイル名、fqbn、platform関連のパラメータを対象ボードに応じて修正してください。
