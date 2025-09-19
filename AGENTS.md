@@ -18,11 +18,7 @@
 |   |-- <sketch-name>/
 |   |   |-- README.en.md
 |   |   |-- README.ja.md
-|   |   |-- sketch.yaml
-|   |   |-- <sketch-name>.ino
 |   |   `-- <sketch-name>-<platform>/
-|   |       |-- README.en.md
-|   |       |-- README.ja.md
 |   |       |-- sketch.yaml
 |   |       `-- <sketch-name>-<platform>.ino
 |   `-- ...
@@ -31,11 +27,8 @@
 ```
 
 - `<category>` はスケッチのテーマ名をケバブケースで表記する（例: `communication`, `sensors`）
-- ESP32 をターゲットとする標準ケースは `<category>/<sketch-name>/` 配下に配置する
-- 追加のプラットフォーム向けバリエーションは `<category>/<sketch-name>/<sketch-name>-<platform>/` の 3 階層構成で管理する（例: `communication/serial-hello-world/serial-hello-world-uno/`）
-- `<platform>` にはボード種別をケバブケースで記載し、README に想定 FQBN を明記する
-- プラットフォーム別フォルダ名と `.ino` ファイル名には必ずプラットフォーム名を含める（例: `serial-hello-world-uno/serial-hello-world-uno.ino`）
-- すべての階層（カテゴリ、スケッチ、プラットフォーム）に `README.en.md` と `README.ja.md` を配置する
+- 複数のプラットフォーム向けバリエーションはESP32も含めて `<category>/<sketch-name>/<sketch-name>-<platform>/` の 3 階層構成で管理する（例: `communication/serial-hello-world/serial-hello-world-uno/`）
+- 上位２階層（カテゴリ、スケッチ）に `README.en.md` と `README.ja.md` を配置する
 - コード内コメントは英語のみを使用すること
 - 追加資料や画像が必要な場合は各スケッチ（またはプラットフォーム）ディレクトリ内に `docs/` や `assets/` を作成する
 
