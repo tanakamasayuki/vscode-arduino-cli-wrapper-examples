@@ -13,8 +13,8 @@
 ## Build & Upload
 Arduino Uno R3 の例:
 ```
-arduino-cli compile getting-started/serial-hello-world/serial-hello-world-uno
-arduino-cli upload --port <port> getting-started/serial-hello-world/serial-hello-world-uno
+arduino-cli compile 01_getting-started/01_serial-hello-world/serial-hello-world-uno
+arduino-cli upload --port <port> 01_getting-started/01_serial-hello-world/serial-hello-world-uno
 ```
 ESP32 系のボードでは `serial-hello-world-esp32-dev` や `serial-hello-world-m5stack-atom` にパスを置き換えて同じコマンドを実行します。`<port>` には環境で検出されたシリアルポート名を指定し、シリアルモニタは 115200 baud で開いてください。
 

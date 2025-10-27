@@ -10,8 +10,8 @@
 
 ## Build & Upload
 ```
-arduino-cli compile --profile uno getting-started/serial-hello-world-multi-board/serial-hello-world-multi-board
-arduino-cli upload --profile uno --port <port> getting-started/serial-hello-world-multi-board/serial-hello-world-multi-board
+arduino-cli compile --profile uno 01_getting-started/02_serial-hello-world-multi-board/serial-hello-world-multi-board
+arduino-cli upload --profile uno --port <port> 01_getting-started/02_serial-hello-world-multi-board/serial-hello-world-multi-board
 ```
 ESP32 系ボードを使うときは `--profile` の値を `esp32_dev` または `m5stack_atom` に変更します。シリアルモニタは 115200 baud で開いてください。
 

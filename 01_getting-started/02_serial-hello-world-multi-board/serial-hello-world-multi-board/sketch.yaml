@@ -3,14 +3,17 @@ profiles:
     fqbn: arduino:avr:uno
     platforms:
       - platform: arduino:avr (1.8.6)
+
   esp32_dev:
     fqbn: esp32:esp32:esp32
     platforms:
-      - platform: esp32:esp32 (3.3.1)
+      - platform: esp32:esp32 (3.3.2)
         platform_index_url: https://espressif.github.io/arduino-esp32/package_esp32_index.json
+
   m5stack_atom:
     fqbn: m5stack:esp32:m5stack_atom
     platforms:
-      - platform: m5stack:esp32 (3.2.2)
+      - platform: m5stack:esp32 (3.2.3)
         platform_index_url: https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/arduino/package_m5stack_index.json
+
 default_profile: uno

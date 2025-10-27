@@ -2,6 +2,7 @@ profiles:
   m5stack_atom:
     fqbn: m5stack:esp32:m5stack_atom
     platforms:
-      - platform: m5stack:esp32 (3.2.2)
+      - platform: m5stack:esp32 (3.2.3)
         platform_index_url: https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/arduino/package_m5stack_index.json
+
 default_profile: m5stack_atom
