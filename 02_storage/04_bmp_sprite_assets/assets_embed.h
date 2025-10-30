@@ -2520,3 +2520,14 @@ alignas(4) const uint8_t assets_1_bmp[] PROGMEM = {
   0xFF, 0x00, 0xFF, 0xFF, 0x00, 0xFF
 };
 const size_t assets_1_bmp_len = 30054;
+
+constexpr size_t assets_file_count = 1;
+const char* const assets_file_names[assets_file_count] = {
+  "/1.bmp"
+};
+const uint8_t* const assets_file_data[assets_file_count] = {
+  assets_1_bmp
+};
+const size_t assets_file_sizes[assets_file_count] = {
+  assets_1_bmp_len
+};

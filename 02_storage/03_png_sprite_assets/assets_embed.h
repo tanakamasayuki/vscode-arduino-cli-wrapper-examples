@@ -797,3 +797,14 @@ alignas(4) const uint8_t assets_1_png[] PROGMEM = {
   0x00, 0x49, 0x45, 0x4E, 0x44, 0xAE, 0x42, 0x60, 0x82
 };
 const size_t assets_1_png_len = 9381;
+
+constexpr size_t assets_file_count = 1;
+const char* const assets_file_names[assets_file_count] = {
+  "/1.png"
+};
+const uint8_t* const assets_file_data[assets_file_count] = {
+  assets_1_png
+};
+const size_t assets_file_sizes[assets_file_count] = {
+  assets_1_png_len
+};
