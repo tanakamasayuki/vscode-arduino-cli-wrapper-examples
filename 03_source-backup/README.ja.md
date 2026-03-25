@@ -13,7 +13,7 @@
 arduino-cli compile --profile esp32_dev 03_source-backup/<sketch-folder>
 arduino-cli upload --profile esp32_dev --port <port> 03_source-backup/<sketch-folder>
 ```
-`<sketch-folder>` には対象ディレクトリ名を指定します。現時点では `01_boot-print` を利用できます。シリアルモニタは 115200 baud で開いてください。
+`<sketch-folder>` には対象ディレクトリ名を指定します。現時点では `01_boot-print` と `02_gpio-low-print` を利用できます。シリアルモニタは 115200 baud で開いてください。
 
 ## Notes
 - `.sourcebackupconfig` の `include` / `exclude` パターンで、アーカイブへ入れるファイルと除外する生成物を制御します。

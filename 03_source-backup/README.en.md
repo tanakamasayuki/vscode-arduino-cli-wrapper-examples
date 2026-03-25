@@ -13,7 +13,7 @@ This category focuses on `.sourcebackupconfig`, which collects the files require
 arduino-cli compile --profile esp32_dev 03_source-backup/<sketch-folder>
 arduino-cli upload --profile esp32_dev --port <port> 03_source-backup/<sketch-folder>
 ```
-Replace `<sketch-folder>` with the directory you want to test. `01_boot-print` is currently available. Keep the Serial Monitor at 115200 baud.
+Replace `<sketch-folder>` with the directory you want to test. `01_boot-print` and `02_gpio-low-print` are currently available. Keep the Serial Monitor at 115200 baud.
 
 ## Notes
 - The `include` and `exclude` patterns in `.sourcebackupconfig` define which project files become part of the archive and which generated outputs stay out.
