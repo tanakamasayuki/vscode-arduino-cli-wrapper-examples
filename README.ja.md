@@ -24,9 +24,12 @@ arduino-cli upload --profile <profile-name> --port <port> <category>/<sketch>
 ## Categories
 - [`01_getting-started`](01_getting-started/README.ja.md): シリアル出力の入門スケッチとマルチボード構成例。
 - [`02_storage`](02_storage/README.ja.md): 画像アセットの埋め込み、スプライト化、SPIFFS・LittleFS・microSD からの読み込み手法。
+- [`03_source-backup`](03_source-backup/README.ja.md): ビルドに必要なソース一式を zip 化して埋め込み、実機から復元できる Source Backup の例。
 
 ## Notes
 - `assets/` 配下のファイルを編集したら **Arduino CLI Wrapper: Embed Assets** を実行（またはコンパイル）して `assets_embed.h` を再生成します。
+- `.sourcebackupconfig` を持つスケッチは、コンパイル時に必要ファイルの zip アーカイブを生成し、`sourcebackup_embed.h` / `sourcebackup_embed.cpp` としてソースへ埋め込みます。
+- Source Backup サンプルで出力した Base64 は復元ページ `https://tanakamasayuki.github.io/arduino-cli-helper/sourcebackup.html` に貼り付けて展開できます。
 - ファイルシステムを利用するサンプルでは `data/` や `copy_to_sd/` 内のアセットを事前に書き込み／コピーしてください。
 - ボード固有の配線やアップロード手順、トラブルシューティングは各スケッチの README を参照してください。
 

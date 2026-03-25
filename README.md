@@ -24,9 +24,12 @@ Replace `<profile-name>` with one of the profiles defined in the corresponding `
 ## Categories
 - [`01_getting-started`](01_getting-started/README.en.md): Introductory serial examples, including multi-board profiles.
 - [`02_storage`](02_storage/README.en.md): Asset handling patterns for embedded images, sprites, SPIFFS, LittleFS, and microSD.
+- [`03_source-backup`](03_source-backup/README.en.md): Source Backup examples that zip the build inputs, embed them into the sketch, and expose them for later restore.
 
 ## Notes
 - Whenever you edit files inside an `assets/` directory, run **Arduino CLI Wrapper: Embed Assets** (or build the sketch) to refresh the generated `assets_embed.h`.
+- Sketches that include `.sourcebackupconfig` regenerate `sourcebackup_embed.h` and `sourcebackup_embed.cpp` during compilation so the required project files are bundled into an embedded zip archive.
+- Base64 emitted by the Source Backup samples can be pasted into the restore page at `https://tanakamasayuki.github.io/arduino-cli-helper/sourcebackup.html`.
 - File-system based samples provide `data/` or `copy_to_sd/` folders—populate them with binary assets before uploading or copying to removable media.
 - Follow each sketch README for board-specific wiring, upload commands, and troubleshooting logs.
 
