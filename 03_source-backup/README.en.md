@@ -13,12 +13,13 @@ This category focuses on `.sourcebackupconfig`, which collects the files require
 arduino-cli compile --profile esp32_dev 03_source-backup/<sketch-folder>
 arduino-cli upload --profile esp32_dev --port <port> 03_source-backup/<sketch-folder>
 ```
-Replace `<sketch-folder>` with the directory you want to test. `01_boot-print` and `02_gpio-low-print` are currently available. Keep the Serial Monitor at 115200 baud.
+Replace `<sketch-folder>` with the directory you want to test. `01_boot-print`, `02_gpio-low-print`, and `03_none-print` are currently available. Keep the Serial Monitor at 115200 baud.
 
 ## Notes
 - The `include` and `exclude` patterns in `.sourcebackupconfig` define which project files become part of the archive and which generated outputs stay out.
 - Compilation regenerates `sourcebackup_embed.h` and `sourcebackup_embed.cpp`, embedding both the zip payload and a manifest into program memory.
 - The generated helpers expose a restore URL and Base64 output routines so you can copy the backup from Serial into the restore page at `https://tanakamasayuki.github.io/arduino-cli-helper/sourcebackup.html`.
+- Even when a sketch never references the Source Backup helpers, the embedded data can still remain in the firmware image. In that case, read flash from the device with `esptool.py` or a similar tool and feed the resulting `flash.bin` into the extraction page to download the ZIP archive.
 
 ## References
 - [Arduino CLI Documentation](https://arduino.github.io/arduino-cli/latest/)

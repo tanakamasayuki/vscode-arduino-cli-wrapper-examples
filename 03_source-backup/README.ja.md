@@ -13,12 +13,13 @@
 arduino-cli compile --profile esp32_dev 03_source-backup/<sketch-folder>
 arduino-cli upload --profile esp32_dev --port <port> 03_source-backup/<sketch-folder>
 ```
-`<sketch-folder>` には対象ディレクトリ名を指定します。現時点では `01_boot-print` と `02_gpio-low-print` を利用できます。シリアルモニタは 115200 baud で開いてください。
+`<sketch-folder>` には対象ディレクトリ名を指定します。現時点では `01_boot-print`、`02_gpio-low-print`、`03_none-print` を利用できます。シリアルモニタは 115200 baud で開いてください。
 
 ## Notes
 - `.sourcebackupconfig` の `include` / `exclude` パターンで、アーカイブへ入れるファイルと除外する生成物を制御します。
 - コンパイル時に `sourcebackup_embed.h` と `sourcebackup_embed.cpp` が再生成され、zip 本体とマニフェストがプログラムメモリへ埋め込まれます。
 - 生成コードには復元用 URL や Base64 出力ヘルパーが含まれるため、シリアルログからバックアップを取り出して復元ページ `https://tanakamasayuki.github.io/arduino-cli-helper/sourcebackup.html` へ渡せます。
+- スケッチから Source Backup を参照しない構成でも、埋め込みデータ自体はファームウェア内に残ります。その場合は `esptool.py` などで実機から flash イメージを読み出し、抽出ページへ `flash.bin` を渡して ZIP をダウンロードします。
 
 ## References
 - [Arduino CLI Documentation](https://arduino.github.io/arduino-cli/latest/)
