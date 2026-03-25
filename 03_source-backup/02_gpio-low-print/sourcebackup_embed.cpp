@@ -984,6 +984,16 @@ __attribute__((used))
 const size_t blob_len = sizeof(blob);
 
 namespace {
+volatile bool g_sourcebackup_keep = false;
+
+struct SourceBackupAutoRef {
+  SourceBackupAutoRef() {
+    g_sourcebackup_keep = sourcebackup::isValid();
+  }
+};
+
+__attribute__((used)) SourceBackupAutoRef g_sourcebackup_auto_ref;
+
 constexpr size_t kHeaderSize = 24;
 constexpr size_t kFooterSize = 4;
 
